@@ -1,0 +1,170 @@
+site_name: Engineering Standards Guide
+site_description: Comprehensive engineering standards and best practices for multi-business unit organization
+site_author: Ronald DC - Head of Engineering
+site_url: https://rcdelacruz.github.io/engineering-standards-guide
+
+repo_name: rcdelacruz/engineering-standards-guide
+repo_url: https://github.com/rcdelacruz/engineering-standards-guide
+edit_uri: edit/master/docs/
+
+theme:
+  name: material
+  font:
+    text: Work Sans
+    code: JetBrains Mono
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - search.highlight
+    - search.share
+    - toc.follow
+    - content.code.copy
+    - content.code.select
+    - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - mermaid2:
+      arguments:
+        theme: |
+          ^(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'default'
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: rcdelacruz
+      repo: engineering-standards-guide
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/rcdelacruz
+  generator: false
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - getting-started/index.md
+    - Installation & Setup: getting-started/installation.md
+    - First Steps: getting-started/first-steps.md
+    - Development Environment: getting-started/development-environment.md
+    - Project Structure: getting-started/project-structure.md
+  - Architecture:
+    - architecture/index.md
+    - System Overview: architecture/components.md
+    - Data Flow: architecture/data-flow.md
+    - Security Architecture: architecture/security.md
+    - Deployment Architecture: architecture/deployment.md
+    - Architectural Decisions: architecture/decisions.md
+  - Business Unit Standards:
+    - developer-guide/index.md
+    - Web Development:
+      - developer-guide/web/index.md
+      - Full Stack Standards: developer-guide/web/fullstack.md
+      - Frontend Standards: developer-guide/web/frontend.md
+      - Backend Standards: developer-guide/web/backend.md
+      - Testing & Quality: developer-guide/web/testing.md
+    - Mobile Development:
+      - developer-guide/mobile/index.md
+      - Native Development: developer-guide/mobile/native.md
+      - Cross-Platform: developer-guide/mobile/cross-platform.md
+      - Performance & UX: developer-guide/mobile/performance.md
+    - Cloud Engineering:
+      - developer-guide/cloud/index.md
+      - Infrastructure as Code: developer-guide/cloud/infrastructure.md
+      - Container Standards: developer-guide/cloud/containers.md
+      - Serverless Patterns: developer-guide/cloud/serverless.md
+      - Multi-Cloud Strategy: developer-guide/cloud/multi-cloud.md
+    - AI Engineering:
+      - developer-guide/ai/index.md
+      - ML Operations: developer-guide/ai/mlops.md
+      - Model Standards: developer-guide/ai/models.md
+      - Data Pipeline: developer-guide/ai/pipelines.md
+    - Data Engineering:
+      - developer-guide/data/index.md
+      - Data Architecture: developer-guide/data/architecture.md
+      - Pipeline Standards: developer-guide/data/pipelines.md
+      - Quality & Governance: developer-guide/data/governance.md
+  - Solutions Architecture:
+    - solutions-architect/index.md
+    - Design Patterns: solutions-architect/design-patterns.md
+    - Scalability: solutions-architect/scalability.md
+    - System Integration: solutions-architect/integration.md
+    - Performance: solutions-architect/performance.md
+    - Monitoring & Observability: solutions-architect/monitoring.md
+  - Operations:
+    - operations/index.md
+    - Deployment Procedures: operations/deployment.md
+    - Maintenance: operations/maintenance.md
+    - Backup & Recovery: operations/backup-recovery.md
+    - Troubleshooting: operations/troubleshooting.md
+  - Advanced Topics:
+    - advanced/index.md
+    - Customization: advanced/customization.md
+    - Optimization: advanced/optimization.md
+    - Migration Guides: advanced/migration.md
+  - Reference:
+    - reference/index.md
+    - Glossary: reference/glossary.md
+    - FAQ: reference/faq.md
+    - Changelog: reference/changelog.md
+    - Contributing: reference/contributing.md
+    - Migration Guides: reference/migration.md
+    - Resources: reference/resources.md
